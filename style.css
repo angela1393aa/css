@@ -65,10 +65,13 @@ body {
   width: 100%;
 }
 .nav_list {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   flex: 1 1 0;
+  border-bottom: 5px dotted #065260;
+  position: absolute;
+  bottom: 0;
 }
 .list-unstyled {
   list-style: none;
@@ -103,13 +106,56 @@ body {
     margin: 0 auto;
   }
 }
+/* 漢堡 */
+#menu_control {
+  display: none;
+  position: absolute;
+  /* 讓它消失 */
+  /* z-index: 1; */
+  /* 出現 */
+}
+header {
+  position: relative;
+}
+.menu_btn {
+  width: 40px;
+  height: 40px;
+  background-color: var(--minorcolor);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+.menu_btn span {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  display: block;
+  overflow: hidden;
+  /* 選單文字隱藏 */
+}
+.menu_btn::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 5px;
+  width: 30px;
+  background-color: yellow;
+  /* 垂直置中 */
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  /* 垂直置中 */
+  box-shadow: 0 8px 0 yellow, 0 -8px 0 yellow;
+  /* 製作另外兩根 */
+}
 /* ----------content---------- */
 .header_l {
   position: absolute;
   top: 87%;
   left: 0;
   width: 100%;
-  /* 老鼠死在這 */
 }
 .header-bottom-img {
   width: 100%;
@@ -133,11 +179,6 @@ body {
   .card {
     margin: 80px 20px;
   }
-  .card_title {
-    position: absolute;
-    top: -50px;
-    left: -50px;
-  }
 }
 
 .card_title {
@@ -148,21 +189,17 @@ body {
   background-color: var(--minorcolor);
   color: white;
   font-size: 28px;
+  padding: 10px;
   text-align: center;
   position: absolute;
   top: 0px;
   left: 0px;
   transform: translate(-50%, -50%);
-  /* display: flex;
-            align-items:flex-start;
-            justify-content:flex-start; */
 }
 @media screen and (max-width: 768px) {
   .card_title {
-    /* display: flex;
-            justify-content: center; */
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -257,6 +294,7 @@ body {
   width: 50px;
   height: 50px;
   margin: 0 20px;
+  /* vertical-align: middle; */
 }
 .footer_unit {
   width: 50px;
@@ -274,5 +312,35 @@ body {
     border-radius: 0;
     padding: 0;
     margin: 0;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* 手機 */
+  .none {
+    display: none;
+  }
+  .nav_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1;
+    text-align: center;
+  }
+  .nav_list li {
+    margin: 10px;
+    width: 40%;
+  }
+}
+@media screen and (min-width: 769px) {
+  /* 網頁 */
+  .main-nav ul {
+    display: flex;
+  }
+  .a {
+    display: flex;
+  }
+  .menu_btn {
+    display: none;
   }
 }

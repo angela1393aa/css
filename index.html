@@ -31,8 +31,12 @@
         <i class="fab fa-facebook-f awesome_i" style="color: white"></i>
       </div>
       <div class="header-bottom-img">
-        <img class="header_l" src="images/header_l.png" alt="hr" />
+        <!-- <img class="header_l" src="images/header_l.png" alt="hr" /> -->
       </div>
+      <input type="checkbox" name="" id="menu_control" />
+      <label for="menu_control" class="menu_btn" id="menu">
+        <span>選單</span>
+      </label>
       <nav class="list">
         <ul class="list-unstyled nav_list">
           <li class="active"><a href="#">活動辦法</a></li>
@@ -178,4 +182,14 @@
       </div>
     </footer>
   </body>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $("#menu").on("click", function () {
+      $("nav").toggle();
+    });
+  </script>
 </html>
