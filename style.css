@@ -94,10 +94,10 @@ body {
   padding: 10px 20px;
   display: block;
 }
-.nav_list li.active {
+/* .nav_list li.active {
   background: yellow;
   border-radius: 20px;
-}
+} */
 @media screen and (max-width: 780px) {
   .nav_list a {
     margin: 0 auto;
@@ -326,10 +326,21 @@ header {
     align-items: flex-end;
     z-index: 1;
     text-align: center;
+    border-bottom: 5px dotted transparent;
+    background-color: var(--maincolor);
+    opacity: 0.7;
+    font-weight: bold;
   }
   .nav_list li {
-    margin: 10px;
+    margin: 7px;
     width: 40%;
+  }
+  nav {
+    display: none;
+  }
+  .logo_title {
+    max-width: 360px;
+    margin-top: 20px;
   }
 }
 @media screen and (min-width: 769px) {
